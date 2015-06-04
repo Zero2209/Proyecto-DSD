@@ -1,0 +1,438 @@
+﻿@charset "utf-8";
+
+figure,figcaption,header,footer,article,section,nav{
+display:block;/*Asi se indica para navegadores antiguos que soportan hmtl5 pero que lo renderizan como estilos en bloque sino en linea*/
+}
+figure{
+	margin:0;
+}
+figcaption{
+	text-align:center;
+	font-style:italic;
+	font-size:0.9em;
+	padding:5px;
+}
+body{
+	margin: 0;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; /*Tipo de letra*/
+	font-size:14px; /*tamaño de fuente*/
+	line-height: 18px; /*Interlineado(alto de linea)*/
+	background-repeat: no-repeat; 
+	background-position: center top;
+	background-attachment: fixed;
+	color:#444;
+	margin-top:80px;
+	margin-bottom:42px;
+    background-color: #E0F2F7;
+}
+#FrmHuariques {
+    
+     background-color: #E0F2F7;
+}
+
+p{
+     margin :0;
+     margin-bottom: 24px;
+ }
+/******************************************************
+                  ENCABEZADOS
+*******************************************************/
+h1,h3,h4,h5,h6,h2{
+	font-weight: normal;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	line-height: 1.1; /*1.1em, donde 1 em es igual al tamaño de la fuente en ese lugar*/
+}
+
+h1{
+	color:#09C;
+	font-size: 64px;
+}
+h2{
+	font-family: 'Oswald',sans-serif;
+	font-size:36px;
+	color:#963;
+}
+h3{
+	color:#F63;
+	font-size: 24px;
+	border-bottom: dotted 4px #FF3333;
+	font-family: "Times New Roman", sans-serif;
+	font-weight: bold;
+	letter-spacing: 3px;/*espaciado*/
+}
+h4{
+	
+}
+h5{
+	
+}
+h6{
+	
+}
+
+/******************************************************
+                 HIPERVINCULOS
+*******************************************************/
+
+a{
+	color: #F03;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #3C9;
+	text-decoration: underline;
+}
+
+
+#container{
+	
+	 background-color: #E0F2F7;
+	width:960px; /*ancho en pixeles*/
+	margin-left:auto;
+	margin-right:auto;	/* ambos en auto para centrar el objeto */
+	/*border:#2A1B0A 1px solid;*/
+    padding: 50px;
+	}
+#main-header h1{ 
+	margin-bottom: 10px
+}
+
+#main-nav{
+	/*background-color: #FAAC58;*/
+	color:#190714; /*color de texto*/
+	font-family: Verdana;
+}
+
+#main-banner{
+   height:360px;
+   position:relative; /*para el contenedor de los objetos con position absolute*/
+}
+
+#home-sidebar{
+	width:190px;
+	float:left; /* esto sirve para que los objetos se peguen a la izquierda 
+	               y jale a los objetos que le siguen por la derecha*/
+    margin-left:auto;
+	margin-right:auto;
+}
+#home-sidebar p,
+#home-sidebar h3{
+	margin-left:15px;
+	margin-right: 15px;
+}
+
+#home-content{
+	width:960px;
+	float:right;
+   margin-left:auto;
+	margin-right:auto;
+}
+#main-footer{
+	background-color:transparent;
+	color:#000000;
+	clear:both; /*es para que el objeto no se vea 
+	              afectado por float left/right*/
+	padding:15px;
+    text-align: center;
+}
+
+/*id si el objeto es unico y class si es que es un conjunto de objetos*/
+
+.column {
+	/* para definir el id se utiliza # y para las clases se utiliza .*/
+	width: 250px;
+	float: left;
+	padding:15px; /* distancia del borde al contenido del objeto*/
+	              /* margin es del cotnenido a fuera */
+}
+
+
+/******************************************************
+                 MENU
+*******************************************************/
+ul.menu{
+
+	 list-style: none; /* para eliminar las viñetas*/
+	 padding:0;
+	 margin: 0;
+}
+
+ul.menu li{
+	float: left;
+}
+
+.clear-fix{
+	clear:both;
+}
+
+ul.menu li a{
+
+	padding:10px;
+	color:#000;
+	text-decoration: none;
+	display:block;
+    transition-property:background-color;
+	transition-duration:.5s;
+	transition-timing-function:ease-in-out;
+}
+
+ul.menu li a:hover{
+	
+	background-color: #A9D0F5;
+	color:#000;
+}
+
+.img-izq{
+	float: left;
+	margin-right:8px;
+	border: solid 1px  #CCCCCC;
+	padding : 8px;
+	background-color:#eee;
+	border-radius: 25px;
+}
+
+/******************************************************
+               REDES SOCIALES
+*******************************************************/
+.redes-sociales{
+	position:absolute; /*para que tenga una posicion fija respecto a su contenedor*/
+    bottom:100px;
+	left:0;
+	text-align:left
+}
+ul.rsocial {
+    list-style: none;
+    margin: 0;
+    display: inline; /*es ahora un estilo en bloque y en linea al mismo tiempo siendo su ancho igual a lo que contiene*/
+    padding: 0px;
+}
+ul.rsocial li{
+float:left;
+margin-right:0px;
+}
+
+ul.rsocial li:last-child{
+	margin-right:0;
+}
+ul.rsocial li a{
+	width:33px;
+	height:33px;
+	display:block;
+	background-image:url(../imagenes/sprites.png);
+}
+
+.clear-fix{
+	clear:both;
+}
+
+.fb{
+	background-position: 0 -170px; /* se coloca la diferencia desde 0 al inicio de la imagen*/
+}
+.tw{
+	background-position:-43px -170px; 
+}
+.gl{
+	background-position:-86px -170px; 
+}
+
+.yt{
+	background-position:-129px -170px; 
+}
+
+.fl{
+	background-position:-172px -170px; 
+}
+
+.rs{
+	background-position:-215px -170px; 
+}
+
+/*hover*/
+.fb:hover{
+	background-position: 0 -214px; /* se coloca la diferencia desde 0 al inicio de la imagen*/
+}
+.tw:hover{
+	background-position:-43px -214px; 
+}
+.gl:hover{
+	background-position:-86px -214px; 
+}
+
+.yt:hover{
+	background-position:-129px -214px; 
+}
+
+.fl:hover{
+	background-position:-172px -214px; 
+}
+
+.rs:hover{
+	background-position:-215px -214px; 
+}
+
+/******************************************************
+               POSICIONAMIENTO FIJO
+*******************************************************/
+
+#top-content{
+	background-color:#eee;
+	height:80px;
+	position: fixed; /*PARA QUE EL OBJETO TENGA UNA POSICION FIJA RESPECTO A LA VENTANA*/
+	width:100%;
+	top:0; /*posicion vertical respecto a la ventana*/
+    color:#000;
+	text-align:center;
+	width:100%;
+    background-image: url(../imagenes/logo.jpg);
+	position: fixed;
+	background-repeat: no-repeat;
+	background-position:1% 100%; /*x= 1% - y=50%*/
+	z-index:10;
+	-moz-opacity: 0.80;
+	-khtml-opacity: 0.80;
+	opacity: 0.80;
+}
+
+#bottom-content{
+	background-color:#eee;
+	border-top:#ccc 1px solid;
+	padding:10px;
+	color:#000;
+	text-align:center;
+	width:100%;
+	position: fixed; /*PARA QUE EL OBJETO TENGA UNA POSICION FIJA RESPECTO A LA VENTANA*/
+	bottom:0; /*distancia del objeto al broder inferior respecto a la ventana*/
+	/*opacidad para todos los navegadores*/
+	-moz-opacity: 0.80;
+	-khtml-opacity: 0.80;
+	opacity:py=dle;
+}
+/******************************************************
+               DEMAS SECCIONES
+*******************************************************/
+
+.area{
+	clear:both;
+	padding:15px;
+}
+#aproductos{
+	background-color:#DBCAC1;
+}
+#afotos{
+	background-color:#DBCAC1;
+}
+/******************************************************
+               TABLAS
+*******************************************************/
+
+.tproductos{
+	background-color: #EFECE7;
+	width:600px;
+	border-collapse: collapse; /*para elimminar espacios entre celdas*/
+}
+
+.tproductos caption{
+	font-size:24px;
+	margin-bottom:8px;
+}
+
+.tproductos th{
+	background-color:#7D5633;
+	color:#FFF;
+	padding:10px;
+	text-align: left;
+	border: solid 1px #86644D;
+}
+
+.tproductos td{
+	padding:10px;
+	border: solid 1px #D0C5AC;
+
+}
+
+.tproductos tr th:last-child, /*last-child hace referencia al ultimo elemento hijo*/
+.tproductos tr td:last-child{
+	text-align:right;
+}
+
+.tproductos tr th:nth-child(3), /*hace referencia a un elemento hijo de acuerdo a su posicion*/
+.tproductos tr td:nth-child(3){
+	text-align:center;
+}
+
+.tproductos tr:nth-child(even){
+	 /*even=elemento alternada par*/
+	 /*odd=elemento alternada impar*/
+	background-color:#EAE2D7;
+}
+
+.tproductos tr:hover{
+	background-color:#630;
+	color:#CCC;
+}
+
+/******************************************************
+                  FORMULARIOS
+*******************************************************/
+
+.formulario div{
+	margin-bottom:8px;
+}
+
+.formulario label{
+	display:block;
+}
+
+.formulario input,
+.formulario textarea{
+	width:400px;
+	padding:10px;
+	border:none;
+	border-bottom:solid 1px #ddd;
+	outline:none; /*elimina el borde resaltado que tiene por defecto el objeto cuando tiene el foco*/
+	background-color:transparent;
+	font:inherit; /*se heredan las fuentes de la pagina*/
+	color:inherit;
+}
+
+.formulario input:focus,
+.formulario textarea:focus{
+	/*:focus ocurre cuando el objeto tiene el foco o el cursor*/
+	border-bottom-color: #903;
+}
+.formulario textarea{
+	height:120px;
+	resize:none;
+}
+.formulario input[type=submit],
+.formulario input[type=reset]{
+	width:auto;
+	cursor:pointer;
+	background-color:#09C;
+	color:#FFF;
+	transition-property:background-color;
+	transition-duration:.5s;
+	transition-timing-function:ease-in-out;
+}
+
+.formulario input[type=submit]:hover,
+.formulario input[type=reset]:hover{
+	background-color:#903;
+}
+
+::-webkit-input-placeholder {
+   color: #9CF;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #9CF;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #9CF;  
+}
+
+:-ms-input-placeholder {  
+   color: #9CF;  
+}

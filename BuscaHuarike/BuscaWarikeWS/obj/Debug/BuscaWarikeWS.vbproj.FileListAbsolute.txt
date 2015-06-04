@@ -1,0 +1,8 @@
+C:\Users\PC\documents\visual studio 2012\Projects\BuscaHuarike\BuscaWarikeWS\bin\BuscaWarikeWS.dll
+C:\Users\PC\documents\visual studio 2012\Projects\BuscaHuarike\BuscaWarikeWS\bin\BuscaWarikeWS.pdb
+C:\Users\PC\documents\visual studio 2012\Projects\BuscaHuarike\BuscaWarikeWS\bin\BuscaWarikeWS.xml
+C:\Users\PC\documents\visual studio 2012\Projects\BuscaHuarike\BuscaWarikeWS\obj\Debug\BuscaWarikeWS.Resources.resources
+C:\Users\PC\documents\visual studio 2012\Projects\BuscaHuarike\BuscaWarikeWS\obj\Debug\BuscaWarikeWS.vbproj.GenerateResource.Cache
+C:\Users\PC\documents\visual studio 2012\Projects\BuscaHuarike\BuscaWarikeWS\obj\Debug\BuscaWarikeWS.dll
+C:\Users\PC\documents\visual studio 2012\Projects\BuscaHuarike\BuscaWarikeWS\obj\Debug\BuscaWarikeWS.xml
+C:\Users\PC\documents\visual studio 2012\Projects\BuscaHuarike\BuscaWarikeWS\obj\Debug\BuscaWarikeWS.pdb
