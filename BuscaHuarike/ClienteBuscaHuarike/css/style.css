@@ -304,9 +304,6 @@ ul.rsocial li a{
 	position: fixed; /*PARA QUE EL OBJETO TENGA UNA POSICION FIJA RESPECTO A LA VENTANA*/
 	bottom:0; /*distancia del objeto al broder inferior respecto a la ventana*/
 	/*opacidad para todos los navegadores*/
-	-moz-opacity: 0.80;
-	-khtml-opacity: 0.80;
-	opacity:py=dle;
 }
 /******************************************************
                DEMAS SECCIONES

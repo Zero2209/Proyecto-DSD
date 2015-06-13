@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VamosPalHuariqueModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Opinion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="50" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Comentario" Type="nvarchar(max)" />
+    <Property Name="Fecha" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioResena" Type="varchar" MaxLength="10" />
+    <Property Name="Calificacion" Type="int" />
+  </EntityType>
+  <EntityType Name="TB_HUARIQUE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="DESCRIPCION" Type="nvarchar(max)" />
+    <Property Name="TIPO" Type="varchar" MaxLength="50" />
+    <Property Name="RANGO" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="DISTRITO" Type="varchar" MaxLength="50" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="100" />
+    <Property Name="TELEFONO" Type="char" MaxLength="9" />
+    <Property Name="HORARIO" Type="varchar" MaxLength="20" />
+    <Property Name="ESTADO" Type="int" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FecNacimiento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="VamosPalHuariqueModelStoreContainer">
+    <EntitySet Name="Opinion" EntityType="Self.Opinion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_HUARIQUE" EntityType="Self.TB_HUARIQUE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

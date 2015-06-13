@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VamosPalHuariqueModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Clave" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FecNacimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="VamosPalHuariqueEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+    <EntitySet Name="Opinions" EntityType="VamosPalHuariqueModel.Opinion" />
+    <EntitySet Name="Huariques" EntityType="VamosPalHuariqueModel.Huarique" />
+  </EntityContainer>
+  <EntityType Name="Opinion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioResena" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Calificacion" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Huarique">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RANGO" Type="Decimal" Precision="10" Scale="3" />
+    <Property Name="DISTRITO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="HORARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="Int32" />
+  </EntityType>
+</Schema>

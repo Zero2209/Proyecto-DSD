@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h2>User View</h2>
+<style>
+    #mydiv {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        background-color: grey;
+        opacity: .8;
+    }
+
+    .ajax-loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -32px; /* -1 * image width / 2 */
+        margin-top: -32px; /* -1 * image height / 2 */
+        display: block;
+    }
+</style>
+<div data-ng-controller="usuarioController" class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <strong class="error">{{ error }}</strong>
+            <p data-ng-hide="addMode"><a data-ng-click="toggleAdd()" href="javascript:;" class="btn btn-primary">Añadir</a></p>
+            <form name="addUsuario" data-ng-show="addMode" style="width:600px;margin:0px auto;">
+                @*<div class="form-group">
+                        <label for="cid" class="control-label col-xs-3">ID:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cid" placeholder="please enter id" data-ng-model="newusuario.Id" required />
+                        </div>
+                    </div>*@
+                <div class="form-group">
+                    <label for="cname" class="control-label col-xs-3">Usuario:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cname" placeholder="please enter your user" data-ng-model="newusuario.Codigo" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address" class="control-label col-xs-3">Clave:</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="address" placeholder="please enter your password" data-ng-model="newusuario.Clave" required />
+                    </div>
+                </div>
+                @*class="col-sm-2 control-label"*@
+                <div class="form-group">
+                    <label for="city" class="control-label col-xs-3">Nombre:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="city" placeholder="please enter your name" data-ng-model="newusuario.Nombre" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="age" class="control-label col-xs-3">Fecha Nacimiento:</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="age" placeholder="please enter your DOB" data-ng-model="newusuario.FecNacimiento" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country" class="control-label col-xs-3">Estado:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="country" placeholder="please enter a state" data-ng-model="newusuario.Estado" required />
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" value="Add" data-ng-click="add()" data-ng-disabled="!addUsuario.$valid" class="btn btn-primary" />
+                        <input type="button" value="Cancel" data-ng-click="toggleAdd()" class="btn btn-primary" />
+                    </div>
+                </div>
+                <br />
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" style="width:800px">
+                    <tr>
+                        <th>Id</th>
+                        <td>Codigo</td>
+                        <th>Clave</th>
+                        <th>Nombre</th>
+                        <th>FecNacimiento</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                    <tr data-ng-repeat="usuario in usuarios">
+                        <td><strong data-ng-hide="usuario.editMode">{{ usuario.Id }}</strong></td>
+                        <td>
+                            <p data-ng-hide="usuario.editMode">{{ usuario.Codigo }}</p>
+                            <input data-ng-show="usuario.editMode" type="text" data-ng-model="usuario.Codigo" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="usuario.editMode">{{ usuario.Clave }}</p>
+                            <input data-ng-show="usuario.editMode" type="password" data-ng-model="usuario.Clave" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="usuario.editMode">{{ usuario.Nombre }}</p>
+                            <input data-ng-show="usuario.editMode" type="text" data-ng-model="usuario.Nombre" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="usuario.editMode">{{ usuario.FecNacimiento }}</p>
+                            <input data-ng-show="usuario.editMode" type="text" data-ng-model="usuario.FecNacimiento" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="usuario.editMode">{{ usuario.Estado }}</p>
+                            <input data-ng-show="usuario.editMode" type="text" data-ng-model="usuario.Estado" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="usuario.editMode"><a data-ng-click="toggleEdit(usuario)" href="javascript:;" class="glyphicon glyphicon-edit">Editar</a> | <a data-ng-click="deletecustomer(usuario)" href="javascript:;" class="glyphicon glyphicon-trash">Anular</a></p>
+                            <p data-ng-show="usuario.editMode"><a data-ng-click="save(usuario)" href="javascript:;">Grabar</a> | <a data-ng-click="toggleEdit(usuario)" href="javascript:;">Cancelar</a></p>
+                        </td>
+                    </tr>
+                </table>
+                <hr />
+            </div>
+        </div>
+    </div>
+    @*<div id="mydiv" data-ng-show="loading">
+             <img src="Images/ajax-loader.gif" class="ajax-loader" />
+        </div>*@
+</div>

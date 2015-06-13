@@ -6,191 +6,216 @@ ClienteBuscaHuarike
 </name>
 </assembly>
 <members>
-<member name="F:ClienteBuscaHuarike._Default.FrmHuariques">
-	<summary>
+<member name="F:ClienteBuscaHuarike._Default._FrmHuariques">
+<summary>
 Control FrmHuariques.
 </summary>
-	<remarks>
+<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:ClienteBuscaHuarike._Default.ddlDistritos">
-	<summary>
+</member>
+<member name="F:ClienteBuscaHuarike._Default._ddlDistritos">
+<summary>
 Control ddlDistritos.
 </summary>
-	<remarks>
+<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:ClienteBuscaHuarike._Default.Label1">
-	<summary>
+</member>
+<member name="F:ClienteBuscaHuarike._Default._Label1">
+<summary>
 Control Label1.
 </summary>
-	<remarks>
+<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:ClienteBuscaHuarike._Default.ddlTipo">
-	<summary>
+</member>
+<member name="F:ClienteBuscaHuarike._Default._ddlTipo">
+<summary>
 Control ddlTipo.
 </summary>
-	<remarks>
+<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:ClienteBuscaHuarike._Default.gvHuarique">
-	<summary>
+</member>
+<member name="F:ClienteBuscaHuarike._Default._gvHuarique">
+<summary>
 Control gvHuarique.
 </summary>
-	<remarks>
+<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:ClienteBuscaHuarike._Default.btnBuscar">
-	<summary>
+</member>
+<member name="F:ClienteBuscaHuarike._Default._btnBuscar">
+<summary>
 Control btnBuscar.
 </summary>
-	<remarks>
+<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:ClienteBuscaHuarike._Default.btnAgregar">
-	<summary>
+</member>
+<member name="F:ClienteBuscaHuarike._Default._btnAgregar">
+<summary>
 Control btnAgregar.
 </summary>
-	<remarks>
+<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:ClienteBuscaHuarike.IniciarSesion.loginForm">
-	<summary>
+</member>
+<member name="F:ClienteBuscaHuarike.IniciarSesion._loginForm">
+<summary>
 Control loginForm.
 </summary>
-	<remarks>
+<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:ClienteBuscaHuarike.IniciarSesion.PStrUsuario">
-	<summary>
+</member>
+<member name="F:ClienteBuscaHuarike.IniciarSesion._PStrUsuario">
+<summary>
 Control PStrUsuario.
 </summary>
-	<remarks>
+<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:ClienteBuscaHuarike.IniciarSesion.PStrClave">
-	<summary>
+</member>
+<member name="F:ClienteBuscaHuarike.IniciarSesion._PStrClave">
+<summary>
 Control PStrClave.
 </summary>
-	<remarks>
+<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:ClienteBuscaHuarike.IniciarSesion.btnIngresar">
-	<summary>
+</member>
+<member name="F:ClienteBuscaHuarike.IniciarSesion._btnIngresar">
+<summary>
 Control btnIngresar.
 </summary>
-	<remarks>
+<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:ClienteBuscaHuarike.RegistrarUsuario.form1">
-	<summary>
-Control form1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:ClienteBuscaHuarike.RegistrarUsuario.TextBox1">
-	<summary>
-Control TextBox1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:ClienteBuscaHuarike.RegistrarUsuario.Label1">
-	<summary>
-Control Label1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:ClienteBuscaHuarike.RegistrarUsuario.TextBox2">
-	<summary>
-Control TextBox2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:ClienteBuscaHuarike.RegistrarUsuario.Label2">
-	<summary>
-Control Label2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:ClienteBuscaHuarike.RegistrarUsuario.TextBox3">
-	<summary>
-Control TextBox3.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:ClienteBuscaHuarike.RegistrarUsuario.TextBox4">
-	<summary>
-Control TextBox4.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:ClienteBuscaHuarike.RegistrarUsuario.TextBox5">
-	<summary>
-Control TextBox5.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:ClienteBuscaHuarike.RegistrarUsuario.Button1">
-	<summary>
-Control Button1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="P:ClienteBuscaHuarike.My.MyWebExtension.Computer">
-	<summary>
- Devuelve información sobre el equipo host.
- </summary>
-</member><member name="P:ClienteBuscaHuarike.My.MyWebExtension.User">
-	<summary>
- Devuelve información del usuario web actual.
- </summary>
-</member><member name="P:ClienteBuscaHuarike.My.MyWebExtension.Request">
-	<summary>
- Devuelve un objeto Request.
- </summary>
-</member><member name="P:ClienteBuscaHuarike.My.MyWebExtension.Response">
-	<summary>
- Devuelve un objeto Response.
- </summary>
-</member><member name="P:ClienteBuscaHuarike.My.MyWebExtension.Log">
-	<summary>
- Devuelve el objeto de registro Asp.
- </summary>
-</member><member name="T:ClienteBuscaHuarike.My.MyWebExtension">
-	<summary>
+</member>
+<member name="T:ClienteBuscaHuarike.My.MyWebExtension">
+ <summary>
  Módulo usado para definir las propiedades que están disponibles en el espacio de nombres My para proyectos web.
  </summary>
-	<remarks></remarks>
+ <remarks></remarks>
+</member>
+<member name="P:ClienteBuscaHuarike.My.MyWebExtension.Computer">
+ <summary>
+ Devuelve información sobre el equipo host.
+ </summary>
+</member>
+<member name="P:ClienteBuscaHuarike.My.MyWebExtension.User">
+ <summary>
+ Devuelve información del usuario web actual.
+ </summary>
+</member>
+<member name="P:ClienteBuscaHuarike.My.MyWebExtension.Request">
+ <summary>
+ Devuelve un objeto Request.
+ </summary>
+</member>
+<member name="P:ClienteBuscaHuarike.My.MyWebExtension.Response">
+ <summary>
+ Devuelve un objeto Response.
+ </summary>
+</member>
+<member name="P:ClienteBuscaHuarike.My.MyWebExtension.Log">
+ <summary>
+ Devuelve el objeto de registro Asp.
+ </summary>
+</member>
+<member name="F:ClienteBuscaHuarike.RegistrarUsuario._form1">
+<summary>
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:ClienteBuscaHuarike.RegistrarUsuario._TextBox1">
+<summary>
+Control TextBox1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:ClienteBuscaHuarike.RegistrarUsuario._Label1">
+<summary>
+Control Label1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:ClienteBuscaHuarike.RegistrarUsuario._TextBox2">
+<summary>
+Control TextBox2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:ClienteBuscaHuarike.RegistrarUsuario._Label2">
+<summary>
+Control Label2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:ClienteBuscaHuarike.RegistrarUsuario._TextBox3">
+<summary>
+Control TextBox3.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:ClienteBuscaHuarike.RegistrarUsuario._TextBox4">
+<summary>
+Control TextBox4.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:ClienteBuscaHuarike.RegistrarUsuario._TextBox5">
+<summary>
+Control TextBox5.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:ClienteBuscaHuarike.RegistrarUsuario._Button1">
+<summary>
+Control Button1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member>
 </members>
 </doc>

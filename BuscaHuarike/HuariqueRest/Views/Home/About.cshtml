@@ -1,0 +1,185 @@
+﻿@{
+    ViewBag.Title = "Bienvenida";
+}
+<h2>Listado de Huarique</h2>
+<style>
+    #mydiv {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        background-color: grey;
+        opacity: .8;
+    }
+
+    .ajax-loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -32px; /* -1 * image width / 2 */
+        margin-top: -32px; /* -1 * image height / 2 */
+        display: block;
+    }
+    #addHuarique{border-radius:50%; background-color:lavender;}
+</style>
+<div data-ng-controller="huariqueController" class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <strong class="error">{{ error }}</strong>
+            <p data-ng-hide="addMode"><a data-ng-click="toggleAdd()" href="javascript:;" class="btn btn-primary">Añadir</a></p>
+            <form name="addHuarique" data-ng-show="addMode" style="width:600px;margin:0px auto;">
+                <div class="form-group">
+                    <label for="cname" class="control-label col-xs-3">Codigo:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cname" placeholder="please enter your code" data-ng-model="newhuarique.Id" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address" class="control-label col-xs-3">Nombre:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="address" placeholder="please enter your name" data-ng-model="newhuarique.Nombre" required />
+                    </div>
+                </div>
+                @*class="col-sm-2 control-label"*@
+                <div class="form-group">
+                    <label for="city" class="control-label col-xs-3">Descripcion:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="city" placeholder="please enter your description" data-ng-model="newhuarique.Descripcion" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="age" class="control-label col-xs-3">Tipo:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="age" placeholder="please enter your type" data-ng-model="newhuarique.Tipo" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country" class="control-label col-xs-3">Rango:</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="country" placeholder="please enter a range of price" data-ng-model="newhuarique.Rango" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country" class="control-label col-xs-3">Distrito:</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="country" placeholder="please enter a rate" data-ng-model="newhuarique.Distrito" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dir" class="control-label col-xs-3"> Direccion:</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="dir" placeholder="please enter a rate" data-ng-model="newhuarique.Direccion" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fono" class="control-label col-xs-3">Telefono:</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fono" placeholder="please enter a phone" data-ng-model="newhuarique.Telefono" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="horario" class="control-label col-xs-3">Horario:</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="horario" placeholder="please enter a shift" data-ng-model="newhuarique.Horario" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="estado" class="control-label col-xs-3">Estado:</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="estado" placeholder="please enter a rate" data-ng-model="newhuarique.Estado" required />
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" value="Add" data-ng-click="add()" data-ng-disabled="!addHuarique.$valid" class="btn btn-primary" />
+                        <input type="button" value="Cancel" data-ng-click="toggleAdd()" class="btn btn-primary" />
+                    </div>
+                </div>
+                <br />
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" style="width:800px">
+                    <tr>
+                        <th>Codigo</th>
+                        <td>Nombre</td>
+                        <td>Descripcion</td>
+                        <th>Tipo</th>
+                        <th>Rango</th>
+                        <th>Distrito</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Horario</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                    <tr data-ng-repeat="huarique in huariques">
+                        <td><strong data-ng-hide="huarique.editMode">{{ huarique.Id }}</strong></td>
+                        <td>
+                            <p data-ng-hide="huarique.editMode">{{ huarique.Nombre }}</p>
+                            <input data-ng-show="huarique.editMode" type="text" data-ng-model="huarique.Nombre" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="huarique.editMode">{{ huarique.Descripcion }}</p>
+                            <input data-ng-show="huarique.editMode" type="text" data-ng-model="huarique.Descripcion" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="huarique.editMode">{{ huarique.Tipo }}</p>
+                            <input data-ng-show="huarique.editMode" type="text" data-ng-model="huarique.Tipo" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="huarique.editMode">{{ huarique.Rango }}</p>
+                            <input data-ng-show="huarique.editMode" type="text" data-ng-model="huarique.Rango" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="huarique.editMode">{{ huarique.Distrito }}</p>
+                            <input data-ng-show="huarique.editMode" type="text" data-ng-model="huarique.Distrito" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="huarique.editMode">{{ huarique.Direccion}}</p>
+                            <input data-ng-show="huarique.editMode" type="text" data-ng-model="huarique.Direccion" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="huarique.editMode">{{ huarique.Telefono }}</p>
+                            <input data-ng-show="huarique.editMode" type="text" data-ng-model="huarique.Telefono" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="huarique.editMode">{{ huarique.Horario }}</p>
+                            <input data-ng-show="huarique.editMode" type="text" data-ng-model="huarique.Horario" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="huarique.editMode">{{ huarique.Estado }}</p>
+                            <input data-ng-show="huarique.editMode" type="text" data-ng-model="huarique.Estado" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="huarique.editMode"><a data-ng-click="toggleEdit(huarique)" href="javascript:;" class="glyphicon glyphicon-edit">Editar</a> | <a data-ng-click="delete(huarique)" href="javascript:;" class="glyphicon glyphicon-trash">Anular</a></p>
+                            <p data-ng-show="huarique.editMode"><a data-ng-click="save(huarique)" href="javascript:;">Grabar</a> | <a data-ng-click="toggleEdit(huarique)" href="javascript:;">Cancelar</a></p>
+                        </td>
+                    </tr>
+                </table>
+                <hr />
+            </div>
+        </div>
+    </div>
+    @*<div id="mydiv" data-ng-show="loading">
+            <img src="Images/ajax-loader.gif" class="ajax-loader" />
+        </div>*@
+</div>

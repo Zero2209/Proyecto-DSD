@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "Bienvenida";
+}
+<h2>Listado de Opiniones</h2>
+<style>
+    #mydiv {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        background-color: grey;
+        opacity: .8;
+    }
+
+    .ajax-loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -32px; /* -1 * image width / 2 */
+        margin-top: -32px; /* -1 * image height / 2 */
+        display: block;
+    }
+</style>
+<div data-ng-controller="opinionController" class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <strong class="error">{{ error }}</strong>
+            <p data-ng-hide="addMode"><a data-ng-click="toggleAdd()" href="javascript:;" class="btn btn-primary">Añadir</a></p>
+            <form name="addOpinion" data-ng-show="addMode" style="width:600px;margin:0px auto;">
+                <div class="form-group">
+                    <label for="cname" class="control-label col-xs-3">Codigo:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cname" placeholder="please enter your code" data-ng-model="newopinion.Codigo" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address" class="control-label col-xs-3">Nombre:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="address" placeholder="please enter your name" data-ng-model="newopinion.Nombre" required />
+                    </div>
+                </div>
+                @*class="col-sm-2 control-label"*@
+                <div class="form-group">
+                    <label for="city" class="control-label col-xs-3">Comentario:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="city" placeholder="please enter your review" data-ng-model="newopinion.Comentario" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="age" class="control-label col-xs-3">Fecha Resena:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="age" placeholder="please enter your DOR" data-ng-model="newopinion.Fecha" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country" class="control-label col-xs-3">Usuario:</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="country" placeholder="please enter a user" data-ng-model="newopinion.UsuarioResena" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country" class="control-label col-xs-3">Calificacion:</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="country" placeholder="please enter a rate" data-ng-model="newopinion.Calificacion" required />
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" value="Add" data-ng-click="add()" data-ng-disabled="!addOpinion.$valid" class="btn btn-primary" />
+                        <input type="button" value="Cancel" data-ng-click="toggleAdd()" class="btn btn-primary" />
+                    </div>
+                </div>
+                <br />
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" style="width:800px">
+                    <tr>
+                        <th>Id</th>
+                        <td>Codigo</td>
+                        <th>Nombre</th>
+                        <th>Comentario</th>
+                        <th>Fecha Resena</th>
+                        <th>Usuario Resena</th>
+                        <th>Calificacion</th>
+                        <th>Acciones</th>
+                    </tr>
+                    <tr data-ng-repeat="opinion in opinions">
+                        <td><strong data-ng-hide="opinion.editMode">{{ opinion.Id }}</strong></td>
+                        <td>
+                            <p data-ng-hide="opinion.editMode">{{ opinion.Codigo }}</p>
+                            <input data-ng-show="item.editMode" type="text" data-ng-model="opinion.Codigo" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="opinion.editMode">{{ opinion.Nombre }}</p>
+                            <input data-ng-show="opinion.editMode" type="text" data-ng-model="opinion.Nombre" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="opinion.editMode">{{ opinion.Comentario }}</p>
+                            <input data-ng-show="opinion.editMode" type="text" data-ng-model="opinion.Comentario" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="opinion.editMode">{{ opinion.Fecha}}</p>
+                            <input data-ng-show="opinion.editMode" type="text" data-ng-model="opinion.Fecha" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="opinion.editMode">{{ opinion.UsuarioResena }}</p>
+                            <input data-ng-show="opinion.editMode" type="text" data-ng-model="opinion.UsuarioResena" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="opinion.editMode">{{ opinion.Calificacion }}</p>
+                            <input data-ng-show="opinion.editMode" type="text" data-ng-model="opinion.Califiacion" />
+                        </td>
+                        <td>
+                            <p data-ng-hide="opinion.editMode"><a data-ng-click="toggleEdit(opinion)" href="javascript:;" class="glyphicon glyphicon-edit">Editar</a> | <a data-ng-click="delete(opinion)" href="javascript:;" class="glyphicon glyphicon-trash">Anular</a></p>
+                            <p data-ng-show="opinion.editMode"><a data-ng-click="save(opinion)" href="javascript:;">Grabar</a> | <a data-ng-click="toggleEdit(opinion)" href="javascript:;">Cancelar</a></p>
+                        </td>
+                    </tr>
+                </table>
+                <hr />
+            </div>
+        </div>
+    </div>
+    @*<div id="mydiv" data-ng-show="loading">
+            <img src="Images/ajax-loader.gif" class="ajax-loader" />
+        </div>*@
+</div>

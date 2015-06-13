@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BuscaWarikeWS", "BuscaWarikeWS\BuscaWarikeWS.vbproj", "{E578846F-5020-4676-87EE-4E578B038168}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ClienteBuscaHuarike", "ClienteBuscaHuarike\ClienteBuscaHuarike.vbproj", "{D890353A-DE90-46FB-A81E-8C8E315D7B2E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E578846F-5020-4676-87EE-4E578B038168} = {E578846F-5020-4676-87EE-4E578B038168}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarikeRest", "WarikeRest\WarikeRest.csproj", "{B509FA61-8B8B-42E3-968C-6348AB8982EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuariqueRest", "HuariqueRest\HuariqueRest.csproj", "{B738F3A1-FDCA-4743-AFFE-1C345B3451FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E578846F-5020-4676-87EE-4E578B038168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E578846F-5020-4676-87EE-4E578B038168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E578846F-5020-4676-87EE-4E578B038168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E578846F-5020-4676-87EE-4E578B038168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D890353A-DE90-46FB-A81E-8C8E315D7B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D890353A-DE90-46FB-A81E-8C8E315D7B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D890353A-DE90-46FB-A81E-8C8E315D7B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D890353A-DE90-46FB-A81E-8C8E315D7B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B509FA61-8B8B-42E3-968C-6348AB8982EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B509FA61-8B8B-42E3-968C-6348AB8982EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B509FA61-8B8B-42E3-968C-6348AB8982EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B509FA61-8B8B-42E3-968C-6348AB8982EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B738F3A1-FDCA-4743-AFFE-1C345B3451FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B738F3A1-FDCA-4743-AFFE-1C345B3451FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B738F3A1-FDCA-4743-AFFE-1C345B3451FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B738F3A1-FDCA-4743-AFFE-1C345B3451FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
